@@ -1,8 +1,54 @@
+"use client";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
-import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [mainIllustration, setmainIllustration] = useState("/images/main-illustration.png");
+  const [effortlessConnection, seteffortlessConnection] = useState(
+    "/images/effortless-connections.png"
+  );
+  const [powerOfJobReferral, setpowerOfJobReferral] = useState("/images/power-of-referrals.png");
+  const [hiringProcess, sethiringProcess] = useState("/images/hiring-process.png");
+  const [youGotNewJob, setyouGotNewJob] = useState("/images/you-got-new-job.png");
+
+  useEffect(() => {
+    // main-illustration change into
+    const svgImage = new Image();
+    svgImage.src = "/images/main-illustration.svg";
+    svgImage.onload = () => {
+      setmainIllustration(svgImage.src);
+    };
+
+    // effortless-connections change into
+    const svgImage2 = new Image();
+    svgImage2.src = "/images/effortless-connections.svg";
+    svgImage2.onload = () => {
+      seteffortlessConnection(svgImage2.src);
+    };
+
+    // power-of-referrals change into
+    const svgImage3 = new Image();
+    svgImage3.src = "/images/power-of-referrals.svg";
+    svgImage3.onload = () => {
+      setpowerOfJobReferral(svgImage3.src);
+    };
+
+    // hiring-process change into
+    const svgImage4 = new Image();
+    svgImage4.src = "/images/hiring-process.svg";
+    svgImage4.onload = () => {
+      sethiringProcess(svgImage4.src);
+    };
+
+    // you-got-new-job change into
+    const svgImage5 = new Image();
+    svgImage5.src = "/images/you-got-new-job.svg";
+    svgImage5.onload = () => {
+      setyouGotNewJob(svgImage5.src);
+    }
+
+  }, []);
   return (
     <>
       <div className="container mx-auto"></div>
@@ -62,7 +108,7 @@ export default function Home() {
               />
             </div>
             <div className="hidden md:w-3/5  md:block	">
-              <img src="/images/main-illustration.png" className="relative -top-28 h-[640px]" />
+              <img src={mainIllustration} id="main-illustration" className="relative -top-28 h-[640px]" />
             </div>
           </div>
 
@@ -83,7 +129,7 @@ export default function Home() {
           w-[500px] h-[500px] opacity-30 bg-[#FACD49] rounded-full blur-3xl absolute  -right-[27rem] -bottom-96"
           ></div>
 
-          <img src="/images/main-illustration.png" className="block md:hidden relative" />
+          <img src={mainIllustration} className="block md:hidden relative" />
         </section>
       </div>
 
@@ -96,7 +142,7 @@ export default function Home() {
         />
         <div className="flex flex-col md:flex-row">
           <div className="w-full md:w-1/2">
-            <img src="/images/effortless-connections.png" className="hidden md:block" />
+            <img src={effortlessConnection} className="hidden md:block" />
           </div>
           <div className="w-full md:w-1/2">
             <div className="w-[90%] md:w-2/3 mx-auto pt-3 md:pt-24">
@@ -139,7 +185,7 @@ export default function Home() {
           </div>
           <div className="w-full md:w-1/2 text-right relative">
             <img
-              src="/images/power-of-referrals.png"
+              src={powerOfJobReferral}
               className="h-[600px] hidden md:block relative -right-20"
             />
           </div>
@@ -153,7 +199,8 @@ export default function Home() {
         />
         <div className="flex flex-col md:flex-row">
           <div className="w-full md:w-1/2">
-            <img src="/images/hiring-process.png" className="md:block hidden" />
+            <img src={hiringProcess}
+             className="md:block hidden" />
           </div>
           <div className="w-full md:w-1/2">
             <div className="w-[90%] md:w-2/3 mx-auto  pt-3 md:pt-24">
@@ -238,7 +285,7 @@ export default function Home() {
           </div>
           <div className="w-full md:w-1/2 relative hidden md:block">
             <img
-              src="images/you-got-new-job.png"
+              src={youGotNewJob}
               className="relative -right-44 -top-20 h-[700px]"
             />
           </div>
