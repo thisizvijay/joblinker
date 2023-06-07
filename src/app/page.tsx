@@ -2,6 +2,7 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -12,6 +13,17 @@ export default function Home() {
   const [powerOfJobReferral, setpowerOfJobReferral] = useState("/images/power-of-referrals.png");
   const [hiringProcess, sethiringProcess] = useState("/images/hiring-process.png");
   const [youGotNewJob, setyouGotNewJob] = useState("/images/you-got-new-job.png");
+  const [showForm, setshowForm] = useState(false);
+  const [blockID, setblockID] = useState("");
+  const [emailID, setemailID] = useState("");
+  const [sourceX, setsourceX] = useState("");
+
+  const constructUrl = () => {
+    let url = "https://sk2ck7ohu9y.typeform.com/to/ob8UZl9V";
+    if (blockID) {
+      url = `${url}?block=${blockID}`;
+    }
+  };
 
   useEffect(() => {
     // main-illustration change into
@@ -47,14 +59,52 @@ export default function Home() {
     svgImage5.src = "/images/you-got-new-job.svg";
     svgImage5.onload = () => {
       setyouGotNewJob(svgImage5.src);
-    }
+    };
 
+    // print all query params
+    const urlParams = new URLSearchParams(window.location.search);
+    const source = urlParams.get("source");
+    console.log("source", source);
   }, []);
   return (
     <>
+      <Head>
+        <title>JobLinkr - Power Your Job Search with Connections and Referrals</title>
+        <meta
+          name="description"
+          content="Join JobLinkr and unlock a world of job opportunities through powerful connections and referrals. Streamline your job search and land your dream job today"
+        />
+      </Head>
       <div className="container mx-auto"></div>
       <div className="md:container md:mx-auto">
-        <Header />
+        <Header
+          setshowLogin={(boolValue: boolean, id: string) => {
+            setshowForm(boolValue);
+            setblockID(id);
+          }}
+        />
+        {showForm && (
+          // Modal
+          <div className="fixed z-10 inset-0 overflow-y-auto">
+            <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+              {/* https://sk2ck7ohu9y.typeform.com/to/ob8UZl9V */}
+              <div className="fixed inset-0 transition-opacity" aria-hidden="true">
+                <div className="absolute inset-0 bg-gray-500 opacity-100">
+                  <div className="absolute inset-0">
+                    <div className="h-full w-[90%] mx-auto bg-white opacity-100">
+                      <iframe
+                      id="myIframe"
+                        src={"https://eu-submit.jotform.com/231576852462361"}
+                        frameBorder="0"
+                        className="w-full h-full"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
         {/* A big circle with blurly  */}
         <div className="absolute top-0 pointer-events-none -left-10 -z-10 w-96 h-96 bg-red-100 rounded-full mix-blend-multiply filter blur-xl opacity-60 animate-blob animation-delay-2000 "></div>
         <section className="min-h-screen w-[90%] md:w-auto mx-auto">
@@ -88,6 +138,7 @@ export default function Home() {
               py-3
               text-sm
               "
+                  onClick={() => setshowForm(true)}
                 >
                   Sign Up
                 </button>
@@ -109,7 +160,11 @@ export default function Home() {
               />
             </div>
             <div className="hidden md:w-3/5  md:block	">
-              <img src={mainIllustration} id="main-illustration" className="relative -top-28 h-[640px]" />
+              <img
+                src={mainIllustration}
+                id="main-illustration"
+                className="relative -top-28 h-[640px]"
+              />
             </div>
           </div>
 
@@ -200,8 +255,7 @@ export default function Home() {
         />
         <div className="flex flex-col md:flex-row">
           <div className="w-full md:w-1/2">
-            <img src={hiringProcess}
-             className="md:block hidden" />
+            <img src={hiringProcess} className="md:block hidden" />
           </div>
           <div className="w-full md:w-1/2">
             <div className="w-[90%] md:w-2/3 mx-auto  pt-3 md:pt-24">
@@ -285,10 +339,7 @@ export default function Home() {
             </div>
           </div>
           <div className="w-full md:w-1/2 relative hidden md:block">
-            <img
-              src={youGotNewJob}
-              className="relative -right-44 -top-20 h-[700px]"
-            />
+            <img src={youGotNewJob} className="relative -right-44 -top-20 h-[700px]" />
           </div>
         </div>
       </section>
@@ -497,7 +548,7 @@ export default function Home() {
               <div className="flex flex-col md:flex-row">
                 <div className="flex flex-col">
                   <input
-                    type="text"
+                    type="email"
                     placeholder="Enter your email"
                     className="p-4 border border-gray-300 rounded-lg mr-3
         w-full md:w-96
@@ -505,10 +556,16 @@ export default function Home() {
         focus:ring-2
         focus:ring-[#5D50C6]
         focus:border-transparent"
+                    value={emailID}
+                    onChange={(e) => setemailID(e.target.value)}
+                    onFocus={() => setshowForm(true)}
                   />
                 </div>
                 <div className="flex flex-col">
-                  <button className="bg-[#5D50C6] text-white p-4 rounded-2xl mt-3 md:mt-0">
+                  <button
+                    onClick={() => setshowForm(true)}
+                    className="bg-[#5D50C6] text-white p-4 rounded-2xl mt-3 md:mt-0"
+                  >
                     Subscribe
                   </button>
                 </div>

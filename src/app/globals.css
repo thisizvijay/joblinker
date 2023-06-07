@@ -6,3 +6,8 @@ body{
     background: #eaeeff;
     overflow-x: hidden;
 }
+
+/* iframe .formFooter */
+iframe .formFooter{
+    display: none;
+}

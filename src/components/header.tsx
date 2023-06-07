@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 
-const Header: React.FC = () => {
+const Header: any = (props: any) => {
   const [showMenu, setshowMenu] = useState(false);
   return (
     <>
@@ -40,9 +40,14 @@ const Header: React.FC = () => {
               d="M4 6h16M4 12h16M4 18h16"
             />
           </svg>
-          <div className={
-            showMenu ?"w-full md:flex md:items-center md:w-auto ":"w-full md:flex md:items-center md:w-auto hidden"
-          } id="menu">
+          <div
+            className={
+              showMenu
+                ? "w-full md:flex md:items-center md:w-auto "
+                : "w-full md:flex md:items-center md:w-auto hidden"
+            }
+            id="menu"
+          >
             <ul
               className="
         pt-4
@@ -61,24 +66,52 @@ const Header: React.FC = () => {
         "
             >
               <li>
-                <a className="md:p-4 py-2 block hover:text-purple-400" href="#">
+                <a
+                  className="md:p-4 py-2 block hover:text-purple-400"
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    props.setshowLogin(true, "01H29SHDWPWYZHR5GHDQGJ237P");
+                  }}
+                >
                   For Job Seeker
                 </a>
               </li>
               <li>
-                <a className="md:p-4 py-2 block hover:text-purple-400" href="#">
+                <a
+                  className="md:p-4 py-2 block hover:text-purple-400"
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    props.setshowLogin(true,"abd23d0a-ec19-4205-b591-1bc7e2d3caeb");
+                  }}
+                >
                   For Job Referrer
                 </a>
               </li>
               <li>
-                <a className="md:p-4 py-2 block hover:text-purple-400" href="#">
+                <a
+                  className="md:p-4 py-2 block hover:text-purple-400"
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    props.setshowLogin(true,"01H29SHDWP66FMVZ8C3RV689GQ");
+                  }}
+                >
                   For Companies
                 </a>
               </li>
               <li>
-                <a className=" py-2 block 
+                <a
+                  className=" py-2 block 
                  bg-gradient-to-r from-[#5350FF]   to-[#DF0F99] text-white px-10 rounded-full my-2 shadow-md hover:shadow-lg text-center
-                " href="#">
+                "
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    props.setshowLogin(true);
+                  }}
+                >
                   Sign Up
                 </a>
               </li>
