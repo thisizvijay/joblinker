@@ -1,6 +1,7 @@
 "use client";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import Head from "next/head";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -51,6 +52,10 @@ export default function Home() {
   }, []);
   return (
     <>
+    <Head>
+        <title>JobLinkr - Power Your Job Search with Connections and Referrals</title>
+        <meta name="description" content="Join JobLinkr and unlock a world of job opportunities through powerful connections and referrals. Streamline your job search and land your dream job today" />
+    </Head>
       <div className="container mx-auto"></div>
       <div className="md:container md:mx-auto">
         <Header />
