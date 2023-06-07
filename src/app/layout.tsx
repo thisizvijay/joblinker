@@ -23,6 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5" />
       <meta name="msapplication-TileColor" content="#da532c" />
       <meta name="theme-color" content="#ffffff" />
+      <link rel="shortcut icon" href="/images/favicon.ico" />
       <title>JobLinkr - Power Your Job Search with Connections and Referrals</title>
       <meta name="description" content="Join JobLinkr and unlock a world of job opportunities through powerful connections and referrals. Streamline your job search and land your dream job today" />
       <body className={inter.className}>{children}</body>
