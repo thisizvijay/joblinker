@@ -2,12 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+
 body{
-    background: #eaeeff;
-    overflow-x: hidden;
+  background: #eaeeff;
+  overflow-x: hidden;
 }
 
 /* iframe .formFooter */
 iframe .formFooter{
-    display: none;
+  display: none;
 }

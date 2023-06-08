@@ -1,9 +1,14 @@
 "use client";
-import Footer from "@/components/footer";
-import Header from "@/components/header";
-import Head from "next/head";
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { Lato } from "next/font/google";
+import Head from "next/head";
+import Header from "../components/header";
+import Footer from "../components/footer";
+
+const inter = Lato({
+  weight: "400",
+  subsets: ["latin-ext"]
+});
 
 export default function Home() {
   const [mainIllustration, setmainIllustration] = useState("/images/main-illustration.png");
@@ -28,6 +33,7 @@ export default function Home() {
 
   useEffect(() => {
     // main-illustration change into
+    // @ts-ignore
     const svgImage = new Image();
     svgImage.src = "/images/main-illustration.svg";
     svgImage.onload = () => {
@@ -38,6 +44,7 @@ export default function Home() {
     };
 
     // effortless-connections change into
+    // @ts-ignore
     const svgImage2 = new Image();
     svgImage2.src = "/images/effortless-connections.svg";
     svgImage2.onload = () => {
@@ -45,6 +52,7 @@ export default function Home() {
     };
 
     // power-of-referrals change into
+    // @ts-ignore
     const svgImage3 = new Image();
     svgImage3.src = "/images/power-of-referrals.svg";
     svgImage3.onload = () => {
@@ -52,6 +60,7 @@ export default function Home() {
     };
 
     // hiring-process change into
+    // @ts-ignore
     const svgImage4 = new Image();
     svgImage4.src = "/images/hiring-process.svg";
     svgImage4.onload = () => {
@@ -59,6 +68,7 @@ export default function Home() {
     };
 
     // you-got-new-job change into
+    // @ts-ignore
     const svgImage5 = new Image();
     svgImage5.src = "/images/you-got-new-job.svg";
     svgImage5.onload = () => {
@@ -68,10 +78,9 @@ export default function Home() {
     // print all query params
     const urlParams = new URLSearchParams(window.location.search);
     const source = urlParams.get("source");
-    console.log("source", source);
   }, []);
   return (
-    <>
+    <div className={inter.className}>
       <Head>
         <title>JobLinkr - Power Your Job Search with Connections and Referrals</title>
         <meta
@@ -652,6 +661,6 @@ export default function Home() {
         </section>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
