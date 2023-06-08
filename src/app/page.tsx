@@ -33,7 +33,6 @@ export default function Home() {
     svgImage.onload = () => {
       // check the media query is mobile or not
       if (!window.matchMedia("(max-width: 768px)").matches) {
-
         setmainIllustration(svgImage.src);
       }
     };
@@ -114,60 +113,55 @@ export default function Home() {
           <div>
             {/* overlay */}
             <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none">
-
-            <div
-              id="defaultModal"
-              tabIndex={-1}
-              className="fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full justify-center items-center flex"
-              aria-modal="true"
-              role="dialog"
-            >
-              <div className="relative w-full max-w-2xl max-h-full">
-                {/* Modal content */}
-                <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                  {/* Modal header */}
-                  <div className="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                      Introducing JobLinkr.io
-                    </h3>
-                    <button
-                      type="button"
-                      className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                      data-modal-hide="defaultModal"
-                      onClick={() => setvideoModel(false)}
-                    >
-                      <svg
-                        aria-hidden="true"
-                        className="w-5 h-5"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
+              <div
+                id="defaultModal"
+                tabIndex={-1}
+                className="fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full justify-center items-center flex"
+                aria-modal="true"
+                role="dialog"
+              >
+                <div className="relative w-full max-w-2xl max-h-full">
+                  {/* Modal content */}
+                  <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                    {/* Modal header */}
+                    <div className="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
+                      <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                        Introducing JobLinkr.io
+                      </h3>
+                      <button
+                        type="button"
+                        className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                        data-modal-hide="defaultModal"
+                        onClick={() => setvideoModel(false)}
                       >
-                        <path
-                          fillRule="evenodd"
-                          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                      <span className="sr-only">Close modal</span>
-                    </button>
-                  </div>
-                  {/* Modal body */}
-                  <div className="p-6 space-y-6">
-                    {/* video */}
-                    <video controls className="w-full"
-                      autoPlay
-                    >
-                      <source src="/introduction-video.mp4"
-                        
-                      type="video/mp4" />
-                      Your browser does not support the video tag.
+                        <svg
+                          aria-hidden="true"
+                          className="w-5 h-5"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                        <span className="sr-only">Close modal</span>
+                      </button>
+                    </div>
+                    {/* Modal body */}
+                    <div className="p-6 space-y-6">
+                      {/* video */}
+                      <video controls className="w-full" autoPlay>
+                        <source src="/introduction-video.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
                       </video>
+                    </div>
+                    {/* Modal footer */}
                   </div>
-                  {/* Modal footer */}
                 </div>
               </div>
-            </div>
             </div>
           </div>
         )}
@@ -215,6 +209,19 @@ export default function Home() {
             "
                   onClick={() => setvideoModel(true)}
                 >
+                  <svg
+                    width={24}
+                    height={24}
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="inline-block mr-2 -mt-[2px] "
+                  >
+                    <path
+                      d="M11.9688 2C6.44875 2 1.96875 6.48 1.96875 12C1.96875 17.52 6.44875 22 11.9688 22C17.4888 22 21.9688 17.52 21.9688 12C21.9688 6.48 17.4988 2 11.9688 2ZM14.9688 14.23L12.0687 15.9C11.7087 16.11 11.3088 16.21 10.9187 16.21C10.5188 16.21 10.1287 16.11 9.76875 15.9C9.04875 15.48 8.61875 14.74 8.61875 13.9V10.55C8.61875 9.72 9.04875 8.97 9.76875 8.55C10.4888 8.13 11.3487 8.13 12.0787 8.55L14.9787 10.22C15.6987 10.64 16.1287 11.38 16.1287 12.22C16.1287 13.06 15.6987 13.81 14.9688 14.23Z"
+                      fill="#5D50C6"
+                    />
+                  </svg>
                   Watch Demo
                 </button>
               </div>
