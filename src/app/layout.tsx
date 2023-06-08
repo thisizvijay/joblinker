@@ -26,7 +26,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <link rel="shortcut icon" href="/images/favicon.ico" />
       <title>JobLinkr - Power Your Job Search with Connections and Referrals</title>
       <meta name="description" content="Join JobLinkr and unlock a world of job opportunities through powerful connections and referrals. Streamline your job search and land your dream job today" />
-      <body className={inter.className}>{children}</body>
+      <body 
+      suppressHydrationWarning={true} 
+      className={inter.className}>{children}</body>
     </html>
   );
 }

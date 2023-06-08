@@ -31,7 +31,11 @@ export default function Home() {
     const svgImage = new Image();
     svgImage.src = "/images/main-illustration.svg";
     svgImage.onload = () => {
-      setmainIllustration(svgImage.src);
+      // check the media query is mobile or not
+      if (!window.matchMedia("(max-width: 768px)").matches) {
+
+        setmainIllustration(svgImage.src);
+      }
     };
 
     // effortless-connections change into
@@ -97,7 +101,7 @@ export default function Home() {
                         id="myIframe"
                         src={"https://eu-submit.jotform.com/231576852462361"}
                         frameBorder="0"
-                        className="w-full h-full"
+                        className="w-full h-full relative top-1/2 -translate-y-1/2"
                       />
                     </div>
                   </div>
