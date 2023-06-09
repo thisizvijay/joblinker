@@ -141,7 +141,7 @@ export default function Home() {
                     {/* Modal header */}
                     <div className="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
                       <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                        Introducing JobLinkr.io
+                        Introducing JobLinker.app
                       </h3>
                       <button
                         type="button"
@@ -474,7 +474,7 @@ export default function Home() {
               {/* text gr */}
               {/* #DF0F99 */}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#DF0F99]  to-[#5350FF] mt-6 inline-block text-6xl">
-                JobLinkr.io
+                JobLinker.app
               </span>
             </p>
             <p>&nbsp;</p>
