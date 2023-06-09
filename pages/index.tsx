@@ -526,6 +526,7 @@ export default function Home() {
           gtag('js', new Date());
 
           gtag('config', 'G-KWL7EK3TXX');
+          console.log("google analytics loaded")
           `}
       </Script>
     </div>
