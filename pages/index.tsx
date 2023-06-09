@@ -4,6 +4,12 @@ import { Lato } from "next/font/google";
 import Head from "next/head";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import Testimonial from "../components/testimonial";
+import Slide from "react-reveal/Slide";
+import Fade from "react-reveal/Fade";
+import HeadShake from "react-reveal/HeadShake";
+import Bounce from "react-reveal/Bounce";
+import Script from "next/script";
 
 const inter = Lato({
   weight: "400",
@@ -178,7 +184,7 @@ export default function Home() {
         <div className="absolute top-0 pointer-events-none -left-10 -z-10 w-96 h-96 bg-red-100 rounded-full mix-blend-multiply filter blur-xl opacity-60 animate-blob animation-delay-2000 "></div>
         <section className="min-h-screen w-[90%] md:w-auto mx-auto">
           <p className=" md:my-8   ">&nbsp;</p>
-          <button className="bg-transparent shadow-none  border md:inline-block md:bg-white p-3 rounded-full px-5 md:shadow-md hover:shadow-lg text-primary">
+          <button className="bg-transparent shadow-none   border md:inline-block md:bg-white p-3 rounded-full px-5 md:shadow-md hover:shadow-lg text-primary">
             <img src="/images/work-icon.svg" className="w-5 inline -mt-1 mr-1" /> Explore the
             Opportunities
           </button>
@@ -199,7 +205,7 @@ export default function Home() {
                 Era of Job Search and Say Farewell to Traditional Methods
               </p>
               {/* gradient button */}
-              <div className="flex">
+              <div className="flex relative">
                 <button
                   className="
               bg-gradient-to-r from-[#5350FF]   to-[#DF0F99] text-white px-10  rounded-full my-12 shadow-md hover:shadow-lg
@@ -213,6 +219,7 @@ export default function Home() {
                 </button>
                 <button
                   className="
+                  animate-bounce
             border px-10  py-3 rounded-full my-12  ml-3 inline-block hover:shadow-lg bg-white
             w-1/2 text-sm
             "
@@ -224,7 +231,7 @@ export default function Home() {
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="inline-block mr-2 -mt-[2px] "
+                    className="hidden md:inline-block mr-2 -mt-[2px] "
                   >
                     <path
                       d="M11.9688 2C6.44875 2 1.96875 6.48 1.96875 12C1.96875 17.52 6.44875 22 11.9688 22C17.4888 22 21.9688 17.52 21.9688 12C21.9688 6.48 17.4988 2 11.9688 2ZM14.9688 14.23L12.0687 15.9C11.7087 16.11 11.3088 16.21 10.9187 16.21C10.5188 16.21 10.1287 16.11 9.76875 15.9C9.04875 15.48 8.61875 14.74 8.61875 13.9V10.55C8.61875 9.72 9.04875 8.97 9.76875 8.55C10.4888 8.13 11.3487 8.13 12.0787 8.55L14.9787 10.22C15.6987 10.64 16.1287 11.38 16.1287 12.22C16.1287 13.06 15.6987 13.81 14.9688 14.23Z"
@@ -251,6 +258,7 @@ export default function Home() {
             </div>
           </div>
 
+          {/* 
           <img
             src="/images/trust-brand.png"
             className="
@@ -259,7 +267,7 @@ export default function Home() {
           w-full mx-auto   relative
           md:-top-32
           "
-          />
+          /> */}
 
           <div
             className="
@@ -285,18 +293,20 @@ export default function Home() {
           </div>
           <div className="w-full md:w-1/2">
             <div className="w-[90%] md:w-2/3 mx-auto pt-3 md:pt-24">
-              <p className="py-6">&nbsp;</p>
-              <h1 className="text-4xl md:text-6xl my-6 font-bold">
-                Effortless&nbsp;
-                <br />
-                <span className="text-primary">Connections</span>
-              </h1>
-              <p className="text-slate-500 leading-9 text-lg">
-                For job givers, we provide a seamless and efficient hiring process. Our smart
-                candidate matching algorithms help you find the perfect fit for your organization.
-                Save time and resources by connecting directly with high-quality candidates referred
-                by trusted professionals.
-              </p>
+              <Fade bottom>
+                <p className="py-6">&nbsp;</p>
+                <h1 className="text-4xl md:text-6xl my-6 font-bold">
+                  Effortless&nbsp;
+                  <br />
+                  <span className="text-primary">Connections</span>
+                </h1>
+                <p className="text-slate-500 leading-9 text-lg">
+                  For job givers, we provide a seamless and efficient hiring process. Our smart
+                  candidate matching algorithms help you find the perfect fit for your organization.
+                  Save time and resources by connecting directly with high-quality candidates
+                  referred by trusted professionals.
+                </p>
+              </Fade>
             </div>
           </div>
         </div>
@@ -309,17 +319,19 @@ export default function Home() {
         <div className="flex flex-col md:flex-row">
           <div className="w-full md:w-1/2">
             <div className="w-[90%] md:w-2/3 mx-auto pt-3 md:pt-24">
-              <p className="py-6">&nbsp;</p>
-              <h1 className="text-4xl md:text-6xl my-6 font-bold">
-                Tap into the&nbsp;
-                <span className="text-primary block">Power of Referrals</span>
-              </h1>
-              <p className="text-slate-500 leading-9 text-lg">
-                Studies have shown that referrals are one of the most effective ways to secure a
-                job. With JobLinkr, you gain access to a pool of pre-screened and recommended
-                candidates, significantly increasing your chances of landing interviews and job
-                offers.
-              </p>
+              <Fade bottom>
+                <p className="py-6">&nbsp;</p>
+                <h1 className="text-4xl md:text-6xl my-6 font-bold">
+                  Tap into the&nbsp;
+                  <span className="text-primary block">Power of Referrals</span>
+                </h1>
+                <p className="text-slate-500 leading-9 text-lg">
+                  Studies have shown that referrals are one of the most effective ways to secure a
+                  job. With JobLinkr, you gain access to a pool of pre-screened and recommended
+                  candidates, significantly increasing your chances of landing interviews and job
+                  offers.
+                </p>
+              </Fade>
             </div>
           </div>
           <div className="w-full md:w-1/2 text-right relative">
@@ -342,17 +354,19 @@ export default function Home() {
           </div>
           <div className="w-full md:w-1/2">
             <div className="w-[90%] md:w-2/3 mx-auto  pt-3 md:pt-24">
-              <p className="py-6 md:py-6">&nbsp;</p>
-              <h1 className="text-4xl md:text-6xl my-6 font-bold">
-                Streamlined &nbsp;
-                <span className="text-primary block">Hiring Process</span>
-              </h1>
-              <p className="text-slate-500 leading-9 text-lg">
-                For job givers, we provide a seamless and efficient hiring process. Our smart
-                candidate matching algorithms help you find the perfect fit for your organization.
-                Save time and resources by connecting directly with high-quality candidates referred
-                by trusted professionals.
-              </p>
+              <Fade bottom>
+                <p className="py-6 md:py-6">&nbsp;</p>
+                <h1 className="text-4xl md:text-6xl my-6 font-bold">
+                  Streamlined &nbsp;
+                  <span className="text-primary block">Hiring Process</span>
+                </h1>
+                <p className="text-slate-500 leading-9 text-lg">
+                  For job givers, we provide a seamless and efficient hiring process. Our smart
+                  candidate matching algorithms help you find the perfect fit for your organization.
+                  Save time and resources by connecting directly with high-quality candidates
+                  referred by trusted professionals.
+                </p>
+              </Fade>
             </div>
           </div>
         </div>
@@ -366,59 +380,69 @@ export default function Home() {
           <div className="w-full md:w-1/2">
             <div className="w-[90%] md:w-2/3  mx-auto">
               <h3 className="text-xl text-primary my-3">KEY FEATURES</h3>
-              <h1 className="text-4xl md:text-6xl my-4 font-bold">Features That Empower You</h1>
+              <h1 className="text-4xl md:text-6xl my-4 font-bold">Features That <span className="text-primary">Empower You</span></h1>
               <p className="text-slate-500 my-7 text-lg">
                 Maximize Your Potential with Powerful Platform Features
               </p>
-              <div className="p-4 bg-white z-10 rounded-lg mt-3 border hover:shadow-sm cursor-pointer">
-                <div className="flex flex-row">
-                  <div className="flex flex-col">
-                    <span className="bg-[#FF5722] w-16 h-16 p-3 rounded-2xl">
-                      <img src="/images/user.svg" />
-                    </span>
-                  </div>
-                  <div className="flex flex-col justify-center pl-6 font-semibold">
-                    Personalized Job Recommendations
-                  </div>
-                </div>
-              </div>
 
-              <div className="p-4 bg-white rounded-lg mt-3 border hover:shadow-sm cursor-pointer">
-                <div className="flex flex-row">
-                  <div className="flex flex-col">
-                    <span className="bg-[#7D65D5] w-16 h-16 p-3 rounded-2xl">
-                      <img src="/images/match.svg" />
-                    </span>
-                  </div>
-                  <div className="flex flex-col justify-center pl-6 font-semibold">
-                    Resume Match Algorithm
-                  </div>
-                </div>
-              </div>
-              <div className="p-4 bg-white rounded-lg mt-3 border hover:shadow-sm cursor-pointer">
-                <div className="flex flex-row">
-                  <div className="flex flex-col">
-                    <span className="bg-[#FACD49] w-16 h-16 p-3 rounded-2xl pt-5">
-                      <img src="/images/ats.svg" className="justify-center flex flex-col" />
-                    </span>
-                  </div>
-                  <div className="flex flex-col justify-center pl-6 font-semibold">
-                    Application Tracking and Updates
+              <Bounce>
+                <div className="p-4 bg-white z-10 rounded-lg mt-3 border hover:shadow-sm cursor-pointer">
+                  <div className="flex flex-row">
+                    <div className="flex flex-col">
+                      <span className="bg-[#FF5722] w-16 h-16 p-3 rounded-2xl">
+                        <img src="/images/user.svg" />
+                      </span>
+                    </div>
+                    <div className="flex flex-col justify-center pl-6 font-semibold">
+                      Personalized Job Recommendations
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="p-4 bg-white rounded-lg mt-3 border hover:shadow-sm cursor-pointer">
-                <div className="flex flex-row">
-                  <div className="flex flex-col">
-                    <span className="bg-[#F85E9F] w-16 h-16 p-3 rounded-2xl">
-                      <img src="/images/pie.svg" />
-                    </span>
-                  </div>
-                  <div className="flex flex-col justify-center pl-6 font-semibold">
-                    Data-Driven Insights
+              </Bounce>
+
+              <Bounce>
+                <div className="p-4 bg-white rounded-lg mt-3 border hover:shadow-sm cursor-pointer">
+                  <div className="flex flex-row">
+                    <div className="flex flex-col">
+                      <span className="bg-[#7D65D5] w-16 h-16 p-3 rounded-2xl">
+                        <img src="/images/match.svg" />
+                      </span>
+                    </div>
+                    <div className="flex flex-col justify-center pl-6 font-semibold">
+                      Resume Match Algorithm
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Bounce>
+              <Bounce>
+                <div className="p-4 bg-white rounded-lg mt-3 border hover:shadow-sm cursor-pointer">
+                  <div className="flex flex-row">
+                    <div className="flex flex-col">
+                      <span className="bg-[#FACD49] w-16 h-16 p-3 rounded-2xl pt-5">
+                        <img src="/images/ats.svg" className="justify-center flex flex-col" />
+                      </span>
+                    </div>
+                    <div className="flex flex-col justify-center pl-6 font-semibold">
+                      Application Tracking and Updates
+                    </div>
+                  </div>
+                </div>
+              </Bounce>
+
+              <Bounce>
+                <div className="p-4 bg-white rounded-lg mt-3 border hover:shadow-sm cursor-pointer">
+                  <div className="flex flex-row">
+                    <div className="flex flex-col">
+                      <span className="bg-[#F85E9F] w-16 h-16 p-3 rounded-2xl">
+                        <img src="/images/pie.svg" />
+                      </span>
+                    </div>
+                    <div className="flex flex-col justify-center pl-6 font-semibold">
+                      Data-Driven Insights
+                    </div>
+                  </div>
+                </div>
+              </Bounce>
             </div>
           </div>
           <div className="w-full md:w-1/2 relative hidden md:block">
@@ -430,180 +454,7 @@ export default function Home() {
       <p>&nbsp;</p>
       <p>&nbsp;</p>
 
-      <section className="relative h-[500px]">
-        <div className="container mx-auto">
-          {/* testimonial slider */}
-          <div className="flex flex-col">
-            <h1 className="text-center text-primary mt-5 text-2xl font-bold">Testimonials</h1>
-            <p className="text-3xl text-center mt-5">Trust our clients</p>
-            <div className="flex flex-row">
-              <div className="hidden md:block md:w-[10%]">
-                <button
-                  className="bg-white text-black border p-2 rounded-full
-                  w-16 h-16 mt-20 hover:shadow-lg 
-                "
-                >
-                  <svg
-                    width={24}
-                    height={25}
-                    viewBox="0 0 24 25"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="block mx-auto"
-                  >
-                    <path
-                      d="M6.41431 11.5H20.0001C20.5524 11.5 21.0001 11.9478 21.0001 12.5C21.0001 13.0523 20.5524 13.5 20.0001 13.5H6.41431L9.65695 16.7427C10.0475 17.1332 10.0475 17.7664 9.65695 18.1569C9.26642 18.5474 8.63326 18.5474 8.24273 18.1569L4.00009 13.9143C3.21904 13.1332 3.21904 11.8669 4.00009 11.0858L8.24273 6.84319C8.63326 6.45266 9.26642 6.45266 9.65695 6.84319C10.0475 7.23371 10.0475 7.86688 9.65695 8.2574L6.41431 11.5Z"
-                      fill="#191825"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <div className="w-[100%] md:w-[80%]">
-                <div>
-                  <div className="text-center">
-                    <img
-                      src="images/user-image.png"
-                      className="rounded-full w-24 h-24 mx-auto my-10"
-                    />
-                    <h1 className="text-3xl my-5">
-                      <span className="text-orange-500">John Doe </span>{" "}
-                      <span className="text-xl"> / CEO Company</span>
-                    </h1>
-                    <p className="mt-2">
-                      {/* star  svg */}
-                      <svg
-                        width={24}
-                        height={23}
-                        viewBox="0 0 24 23"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="inline ml-2"
-                      >
-                        <path
-                          d="M12 0L15.0919 7.23607H22.3639L16.3639 11.7639L19.4558 19L12 14.4722L4.54418 19L7.63607 11.7639L1.63607 7.23607H8.90812L12 0Z"
-                          fill="#FACD49"
-                        />
-                      </svg>
-                      <svg
-                        width={24}
-                        height={23}
-                        viewBox="0 0 24 23"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="inline ml-2"
-                      >
-                        <path
-                          d="M12 0L15.0919 7.23607H22.3639L16.3639 11.7639L19.4558 19L12 14.4722L4.54418 19L7.63607 11.7639L1.63607 7.23607H8.90812L12 0Z"
-                          fill="#FACD49"
-                        />
-                      </svg>
-                      <svg
-                        width={24}
-                        height={23}
-                        viewBox="0 0 24 23"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="inline ml-2"
-                      >
-                        <path
-                          d="M12 0L15.0919 7.23607H22.3639L16.3639 11.7639L19.4558 19L12 14.4722L4.54418 19L7.63607 11.7639L1.63607 7.23607H8.90812L12 0Z"
-                          fill="#FACD49"
-                        />
-                      </svg>
-                      <svg
-                        width={24}
-                        height={23}
-                        viewBox="0 0 24 23"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="inline ml-2"
-                      >
-                        <path
-                          d="M12 0L15.0919 7.23607H22.3639L16.3639 11.7639L19.4558 19L12 14.4722L4.54418 19L7.63607 11.7639L1.63607 7.23607H8.90812L12 0Z"
-                          fill="#FACD49"
-                        />
-                      </svg>
-                      <svg
-                        width={24}
-                        height={23}
-                        viewBox="0 0 24 23"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="inline ml-2"
-                      >
-                        <path
-                          d="M12 0L15.0919 7.23607H22.3639L16.3639 11.7639L19.4558 19L12 14.4722L4.54418 19L7.63607 11.7639L1.63607 7.23607H8.90812L12 0Z"
-                          fill="#FACD49"
-                        />
-                      </svg>
-                    </p>
-                    <p className="w-2/3 mx-auto my-4">
-                      “JobLinkr is a great platform for job seekers and job givers alike. I was able
-                      to find a job that matched my skills and experience in no time. I highly
-                      recommend it!”
-                    </p>
-                  </div>
-                  <div className="hidden">
-                    <img src="images/user-image.png" />
-                    <h1>
-                      John Doe <span>CEO, Company</span>
-                    </h1>
-                    <p>
-                      “JobLinkr is a great platform for job seekers and job givers alike. I was able
-                      to find a job that matched my skills and experience in no time. I highly
-                      recommend it!”
-                    </p>
-                  </div>
-                  <div className="hidden">
-                    <img src="images/user-image.png" />
-                    <h1>
-                      John Doe <span>CEO, Company</span>
-                    </h1>
-                    <p>
-                      “JobLinkr is a great platform for job seekers and job givers alike. I was able
-                      to find a job that matched my skills and experience in no time. I highly
-                      recommend it!”
-                    </p>
-                  </div>
-                </div>
-                {/* navigation dot */}
-                <p className="text-center my-6">
-                  <button className="bg-gray-300 ml-3  cursor-pointer w-3 h-3 rounded-full"></button>
-                  <button className="bg-[#F85E9F] ml-3 cursor-pointer  w-3 h-3 rounded-full"></button>
-                  <button className="bg-gray-300 ml-3 w-3 cursor-pointer h-3 rounded-full"></button>
-                </p>
-              </div>
-              <div className="hidden md:block md:w-[10%]">
-                <button
-                  className="bg-primary text-white border p-2 rounded-full
-                  w-16 h-16 mt-20 hover:shadow-lg
-                "
-                >
-                  <svg
-                    width={24}
-                    height={25}
-                    viewBox="0 0 24 25"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="block mx-auto"
-                  >
-                    <path
-                      d="M17.5857 11.5H4.00006C3.44779 11.5 3.00006 11.9478 3.00006 12.5C3.00006 13.0523 3.44779 13.5 4.00006 13.5H17.5857L14.343 16.7427C13.9525 17.1332 13.9525 17.7664 14.343 18.1569C14.7336 18.5474 15.3667 18.5474 15.7572 18.1569L20 13.9143C20.781 13.1332 20.781 11.8669 20 11.0858L15.7572 6.84319C15.3667 6.45266 14.7336 6.45266 14.343 6.84319C13.9525 7.23371 13.9525 7.86688 14.343 8.2574L17.5857 11.5Z"
-                      fill="#fff"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <img
-          src="images/testimonial-blob.svg"
-          className="
-            hidden md:block
-          absolute w-screen -top-[450px] left-0 pointer-events-none -z-10"
-        />
-      </section>
+      <Testimonial />
 
       <div className="container mx-auto ">
         <section className="relative mt-20 ">
@@ -661,6 +512,21 @@ export default function Home() {
         </section>
       </div>
       <Footer />
+      <Script
+      src="https://www.googletagmanager.com/gtag/js?id=G-KWL7EK3TXX"
+      strategy="afterInteractive"
+      >
+        
+      </Script>
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-KWL7EK3TXX');
+          `}
+      </Script>
     </div>
   );
 }
