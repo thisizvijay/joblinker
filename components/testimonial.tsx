@@ -409,7 +409,7 @@ const Testimonial: React.FC = () => {
                       </svg>
                     </p>
                     <p className="w-2/3 mx-auto my-4 text-lg">
-                      “A dedicated job referral platform would greatly simplify my role in recommending qualified candidates. I'm eager to leverage my network and help talented individuals find the right opportunities through this platform.”
+                      “A dedicated job referral platform would greatly simplify my role in recommending qualified candidates. I&#39;m eager to leverage my network and help talented individuals find the right opportunities through this platform.”
                     </p>
                   </div>
             
@@ -526,7 +526,7 @@ const Testimonial: React.FC = () => {
                       </svg>
                     </p>
                     <p className="w-2/3 mx-auto my-4 text-lg">
-                      “I'm excited about a platform that simplifies job referrals and connects me with potential opportunities. It would greatly enhance my job search and increase my chances of finding relevant employment.”
+                      “I&#39;m excited about a platform that simplifies job referrals and connects me with potential opportunities. It would greatly enhance my job search and increase my chances of finding relevant employment.”
                     </p>
                   </div>
             
