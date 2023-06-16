@@ -110,7 +110,28 @@ export default function Home() {
               <div className="fixed inset-0 transition-opacity" aria-hidden="true">
                 <div className="absolute inset-0 bg-gray-500 opacity-100">
                   <div className="absolute inset-0">
-                    <div className="h-full w-[90%] mx-auto bg-white opacity-100">
+                    <div className="h-full w-[90%] relative mx-auto bg-white opacity-100">
+                      {/* close button */}
+                      <button
+                      id="closeButton"
+                        className="absolute top-0 right-0 bg-transparent z-40 rounded-full w-10 h-10"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-6 w-6 absolute top-4 right-4"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          onClick={() => setshowForm(false)}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M6 18L18 6M6 6l12 12"
+                          />
+                        </svg>
+                      </button>
                       <iframe
                         id="myIframe"
                         src={"https://eu-submit.jotform.com/231576852462361"}
