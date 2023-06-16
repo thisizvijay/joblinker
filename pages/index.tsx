@@ -88,10 +88,10 @@ export default function Home() {
   return (
     <div className={inter.className}>
       <Head>
-        <title>JobLinkr - Power Your Job Search with Connections and Referrals</title>
+        <title>JobLinker - Power Your Job Search with Connections and Referrals</title>
         <meta
           name="description"
-          content="Join JobLinkr and unlock a world of job opportunities through powerful connections and referrals. Streamline your job search and land your dream job today"
+          content="Join JobLinker and unlock a world of job opportunities through powerful connections and referrals. Streamline your job search and land your dream job today"
         />
       </Head>
       <div className="container mx-auto"></div>
@@ -105,7 +105,7 @@ export default function Home() {
         {showForm && (
           // Modal
           <div className="fixed z-10 inset-0 overflow-y-auto">
-            <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div className="flex items-end justify-center min-h-screen lg:min-h-0 pt-4 px-4 pb-20 text-center sm:block sm:p-0">
               {/* https://sk2ck7ohu9y.typeform.com/to/ob8UZl9V */}
               <div className="fixed inset-0 transition-opacity" aria-hidden="true">
                 <div className="absolute inset-0 bg-gray-500 opacity-100">
@@ -182,7 +182,7 @@ export default function Home() {
         )}
         {/* A big circle with blurly  */}
         <div className="absolute top-0 pointer-events-none -left-10 -z-10 w-96 h-96 bg-red-100 rounded-full mix-blend-multiply filter blur-xl opacity-60 animate-blob animation-delay-2000 "></div>
-        <section className="min-h-screen w-[90%] md:w-auto mx-auto">
+        <section className="min-h-screen lg:min-h-0 w-[90%] md:w-auto mx-auto">
           <p className=" md:my-8   ">&nbsp;</p>
           <button className="bg-transparent shadow-none   border md:inline-block md:bg-white p-3 rounded-full px-5 md:shadow-md hover:shadow-lg text-primary">
             <img src="/images/work-icon.svg" className="w-5 inline -mt-1 mr-1" /> Explore the
@@ -327,7 +327,7 @@ export default function Home() {
                 </h1>
                 <p className="text-slate-500 leading-9 text-lg">
                   Studies have shown that referrals are one of the most effective ways to secure a
-                  job. With JobLinkr, you gain access to a pool of pre-screened and recommended
+                  job. With JobLinker, you gain access to a pool of pre-screened and recommended
                   candidates, significantly increasing your chances of landing interviews and job
                   offers.
                 </p>

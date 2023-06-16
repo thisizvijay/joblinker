@@ -6,6 +6,8 @@
 body{
   background: #eaeeff;
   overflow-x: hidden;
+  max-width: 1800px;
+  margin: 0 auto;
 }
 
 /* iframe .formFooter */
