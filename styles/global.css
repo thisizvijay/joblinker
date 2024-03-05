@@ -10,6 +10,17 @@ body{
   margin: 0 auto;
 }
 
+/* responsive body for large screens */
+@media (min-width: 1024px) {
+  body{
+    background: #eaeeff;
+    overflow-x: hidden;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+}
+
+
 /* iframe .formFooter */
 iframe .formFooter{
   display: none;
